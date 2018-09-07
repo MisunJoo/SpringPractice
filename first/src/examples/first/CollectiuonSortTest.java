@@ -2,8 +2,10 @@ package examples.first;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
+// 내가 만드는 클래스
 public class CollectiuonSortTest {
     public static void main(String[] args){
         List<Book> list = new ArrayList<>();
@@ -11,7 +13,8 @@ public class CollectiuonSortTest {
         list.add(new Book("즐거운자바", 4000));
         list.add(new Book("jsp", 2000));
 
-        Collections.sort(list);
+//        Collections.sort(list);
+        Collections.sort(list, new BookComparator());
 
         for(Book book : list){
             System.out.println(book.getTitle() + ", " + book.getPrice());
@@ -20,6 +23,14 @@ public class CollectiuonSortTest {
     }
 }
 
+class BookComparator implements Comparator<Book>{
+    @Override
+    public int compare(Book o1, Book o2) {
+        return o1.getTitle().compareTo(o2.getTitle());
+    }
+}
+
+// 홍길동이라는 사람이 만든 클래스.
 class Book implements Comparable<Book>{
     private String title;
     private int price;
