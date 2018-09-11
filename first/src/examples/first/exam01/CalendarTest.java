@@ -1,4 +1,4 @@
-package examples.first;
+package examples.first.exam01;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

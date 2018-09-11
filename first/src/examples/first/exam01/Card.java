@@ -1,4 +1,4 @@
-package examples.first;
+package examples.first.exam01;
 
 public class Card {
     private String type;

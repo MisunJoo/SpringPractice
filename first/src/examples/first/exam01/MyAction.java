@@ -1,6 +1,4 @@
-package examples.first;
-
-import com.sun.xml.internal.rngom.parse.host.Base;
+package examples.first.exam01;
 
 // 후배님
 public class MyAction extends BaseAction {

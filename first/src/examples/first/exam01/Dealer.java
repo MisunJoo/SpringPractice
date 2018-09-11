@@ -1,4 +1,4 @@
-package examples.first;
+package examples.first.exam01;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,4 +1,4 @@
-package examples.first;
+package examples.first.exam01;
 
 // 특정 숫자로 태어나면, 이 숫자는 절대로 바꿀 수 없다.
 public class LottoBall {

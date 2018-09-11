@@ -1,4 +1,4 @@
-package examples.first;
+package examples.first.exam01;
 
 // 선배
 public abstract class BaseAction {
