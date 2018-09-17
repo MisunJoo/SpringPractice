@@ -30,7 +30,7 @@ public class SocketHandler extends Thread{
             String line = null;
 
             while((line = in.readLine()) != null){ // 네트워 연결이 끊어질때지 null이 나오면 끝.
-                chatServer.broadcast(line);
+                chatServer.broadcast(this.name + " : " + line);
             }
         }catch(Exception ex){
             System.out.println("Chat Handler close");
