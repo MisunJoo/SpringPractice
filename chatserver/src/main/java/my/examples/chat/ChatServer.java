@@ -15,7 +15,7 @@ public class ChatServer extends Thread{
         this.port = port;
         this.socketSet = new CopyOnWriteArraySet();
     }
-    
+
     public void addPrintWriter(PrintWriter out){
         socketSet.add(out);
     }
