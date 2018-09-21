@@ -9,7 +9,10 @@ public class DefaultServlet {
         if("/".equals(webpath)){
             webpath = webpath + "index.html";
         }
-        String path = "/tmp/www" + webpath;
+
+        WasConfigurationManager wcm = WasConfigurationManager.getInstance();
+        MiniWasConfiguration miniWasConfiguration = wcm.getMiniWasConfiguration("/tmp/m.json");
+        String path =  miniWasConfiguration.getStaticDir() + webpath;
         File file = new File(path);
 
         OutputStream out = response.getOut();
