@@ -5,6 +5,9 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+
+// 자바 리플랙션을 이용하여 메소드 정보를 출력
+// 자바 리플렉션을 이용하여 메소드를 실행. (공부)
 public class ClassLoaderTest03 {
     public static void main(String[] args) throws Exception{
         Sample s1 = new Sample();
