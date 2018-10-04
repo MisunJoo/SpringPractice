@@ -15,3 +15,41 @@ redirect
    302 응답
    ------ GET /guestbook/list --------------->
    <-------------------------------------------
+
+
+-----------
+
+http://www.inven.co.kr/board/{게임id}/{게시판id}  PathVariable
+sort=PID (default)
+p=1 (default)
+category 값이 default는 없다.
+
+http://www.inven.co.kr/board/wow/5280
+http://www.inven.co.kr/board/wow/5280?sort=PID&p=2
+http://www.inven.co.kr/board/wow/5280?sort=PID&p=1
+http://www.inven.co.kr/board/wow/5280?sort=PID&come_idx=5280
+http://www.inven.co.kr/board/wow/5280?sort=PID&come_idx=5280&category=%EC%9E%A1%EB%8B%B4
+http://www.inven.co.kr/board/wow/5280?my=chu&sort=PID
+http://www.inven.co.kr/board/wow/5280?my=con&sort=PID
+
+https://www.facebook.com/groups/codingeverybody/
+https://www.facebook.com/groups/javawocky/
+
+----------------
+
+http://sinpk.tistory.com/entry/JSP-EL-%ED%91%9C%EA%B8%B0%EB%B2%95
+
+${guestbook.name}
+이거는 guestbook.getName(); //위의 el표기법은 객체의 field를 사용하는 것이 아니라 객체의 property를 사용하는것.
+
+예를 들어
+${data.name}
+class Data{
+    private String n; // field
+    public String getName(){ // getter메소드, name property
+        return n;
+    }
+    public void setName(String name){ // setter메소드, name property
+        this.n = name;
+    }
+}
