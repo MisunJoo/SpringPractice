@@ -1,5 +1,7 @@
 package my.examples.guestbook.servlet;
 
+import my.examples.guestbook.dao.GuestbookDao;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +17,8 @@ public class GuestbookListServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // db에서 목록을 읽어온다.
-        List<Guestbook> list = new ArrayList<>();
-        list.add(new Guestbook(1L,"kim", "hello"));
-        list.add(new Guestbook(2L, "lee", "world"));
-        list.add(new Guestbook(3L, "kang", "!!!"));
-
+        GuestbookDao guestbookDao = new GuestbookDao();
+        List<Guestbook> list = guestbookDao.getGuestbookList();
         // request scope - request에 값을 저장하여 jsp까지 값을 전달.
         // 읽어온 결과를 jsp에게 전달하기위해 request에 값을 저장한다.
         req.setAttribute("guestbookList", list);
