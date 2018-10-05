@@ -16,7 +16,8 @@ public class WebServletMapperManager {
             try {
                 Class clazz = Class.forName(className);
                 Annotation annotation = clazz.getAnnotation(WebServlet.class);
-                if (annotation != null) {
+                Class superClass = clazz.getSuperclass();
+                if (annotation != null && superClass == HttpSerlvet.class) {
                     // WebServlet의 value값을 출력한다.
                     WebServlet webServlet = (WebServlet) annotation;
                     String value = webServlet.value();
