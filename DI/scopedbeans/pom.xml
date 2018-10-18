@@ -23,6 +23,7 @@
         </dependency>
 
 
+        <!-- test 라이브러리 or 프레임워크 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
