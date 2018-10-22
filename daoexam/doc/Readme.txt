@@ -83,6 +83,20 @@ insert into board values( ?, ?, ..... );
 
 
 
+---------------
+
+NamedParameterJdbcTemplate
+
+- insert, udpate, delete 를 하려면?
+
+update(SQL, 바인딩할객체)
+
+- 1건 or null 을 select하려면
+
+queryForObject(SQL, 바인딩할객체, Mapper)
+
+- 0건 이상의 List로 select하려면
+
 
 
 
