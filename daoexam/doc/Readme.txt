@@ -41,6 +41,76 @@ AOP가 적용된다.
 
 ---------------------------------------------
 
+Spring JDBC
+
+- Spring JDBC에서 가장 핵심은 JdbcTemplate
+- JdbcTemplate을 좀더 편하게 사용할 수 있도록 하는 클래스 NamedParameterJdbcTemplate
+
+JdbcTemplate ?
+
+- JDBC의 지루한 코드를 줄여주는 기능을 가지고 있다.
+// insert, update, delete, select
+- 사용자는 SQL을 작성하고, 해당 SQL에 바인딩할 객체(보통 Map)를 설정한다.
+// select
+- select한 결과를 DTO에 담아주는 기능을 가지고 있다.- Mapper
+- NamedParameterJdbcTemplate은 ?대신에 이름을 사용할 수 있도록 한다.
+
+Dao 만드는 방법
+
+- @Repository 애노테이션을 붙인다.
+- 필드로 JdbcTemplate, SimpleJdbcInsert 가 선언된다.
+- 생성자에서 DataSource를 주입받아서 JdbcTemplate을 초기화한다.
+- 경우에 따라서는 생성자에서 insert할려고 SimpleJdbcInsert를 초기화 한다.
+
+    public BoardDao(DataSource dataSource){
+        this.jdbc = new NamedParameterJdbcTemplate(dataSource);
+
+        this.insertAction = new SimpleJdbcInsert(dataSource)
+                .withTableName("board")
+                .usingGeneratedKeyColumns("id"); // 자동생성되는 칼럼이 있을 경우 설정
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

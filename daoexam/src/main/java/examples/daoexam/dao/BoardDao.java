@@ -30,7 +30,13 @@ public class BoardDao {
     }
 
     public Long addBoard(Board board){
+        // Board DTO의 내용을 읽어들여서 Insert문장에 바인딩할 값을 가지고 있는
+        // SqlParameterSouce객체를 생성.
         SqlParameterSource params = new BeanPropertySqlParameterSource(board);
+
+        //id가 자동으로 증가하지 않을 경우에는 다음과 같이 execute()메소드를 사용한다.
+        //insertAction.execute(Map) or  insertAction.execute(SqlParameterSource)
+        //insert가 실행되고, 자동으로 증가한 id값을 리턴한다.
         return insertAction.executeAndReturnKey(params).longValue();
     }
 
