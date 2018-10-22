@@ -1,7 +1,6 @@
 package examples.daoexam.main;
 
 import examples.daoexam.config.ApplicationConfig;
-import examples.daoexam.dao.BoardDao;
 import examples.daoexam.dto.Board;
 import examples.daoexam.service.BoardService;
 import org.springframework.context.ApplicationContext;

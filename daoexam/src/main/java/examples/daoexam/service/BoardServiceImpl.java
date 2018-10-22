@@ -41,7 +41,8 @@ public class BoardServiceImpl implements BoardService {
     @Override
     @Transactional(readOnly = true)
     public List<Board> getBoards(int start, int limit) {
-        return null;
+                List<Board> boards = boardDao.getBoards(start, limit);
+                return boards;
     }
 }
 

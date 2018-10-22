@@ -1,7 +1,6 @@
 package examples.daoexam.dao;
 
 import examples.daoexam.dto.Board;
-import examples.daoexam.dto.Role;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -11,11 +10,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class BoardDao {
@@ -88,4 +83,22 @@ public class BoardDao {
             return null;
         }
     }
+
+    public List<Board> getBoards(int start, int limit){
+        String sql = "select id, name, title, content, regdate, read_count     " +
+                "from board where id >= :start LIMIT :limit";
+
+        try{
+            RowMapper<Board> rowMapper = BeanPropertyRowMapper.newInstance(Board.class);
+            Map<String, Integer> map = new HashMap<>();
+            map.put("start", start);
+            map.put("limit", limit);
+
+            return jdbc.query(sql, map, rowMapper);
+
+        }catch (Exception ex){
+            return null;
+        }
+    }
+
 }

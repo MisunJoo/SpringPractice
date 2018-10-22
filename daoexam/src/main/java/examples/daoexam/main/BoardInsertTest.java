@@ -2,13 +2,9 @@ package examples.daoexam.main;
 
 import examples.daoexam.config.ApplicationConfig;
 import examples.daoexam.dao.BoardDao;
-import examples.daoexam.dao.RoleDao;
 import examples.daoexam.dto.Board;
-import examples.daoexam.dto.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Date;
 
 public class BoardInsertTest {
 
