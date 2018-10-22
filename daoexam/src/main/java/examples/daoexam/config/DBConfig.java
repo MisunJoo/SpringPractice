@@ -14,11 +14,11 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 public class DBConfig {
     private String driverClassName = "com.mysql.jdbc.Driver";
 
-    private String url = "jdbc:mysql://localhost:3306/testdb?useUnicode=true&characterEncoding=utf8";
+    private String url = "jdbc:mysql://localhost:3306/connectdb?useUnicode=true&characterEncoding=utf8";
 
-    private String username = "testuser";
+    private String username = "connect";
 
-    private String password = "test123!@#";
+    private String password = "connect";
 
     @Bean
     public DataSource dataSource() {

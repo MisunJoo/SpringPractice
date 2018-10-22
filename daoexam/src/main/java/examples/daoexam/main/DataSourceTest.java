@@ -24,7 +24,7 @@ public class DataSourceTest {
 		}finally {
 			if(conn != null) {
 				try {
-					conn.close();
+					conn.close(); // 커넥션을 되돌려준다.
 				} catch (SQLException e) {
 				}
 			}
