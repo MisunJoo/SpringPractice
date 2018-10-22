@@ -1,5 +1,9 @@
 java.sql.SQLException: Unable to load authentication plugin 'caching_sha2_password' 오류 발생 시 아래와 같은 방법으로 해결.
 
+mysql root계정으로 접속하여 다음처럼 변경
+
+ALTER USER 계정명@'%' IDENTIFIED WITH mysql_native_password BY '암호';
+
 ALTER USER connect@'%' IDENTIFIED WITH mysql_native_password BY 'connect';
 
 ----------------
