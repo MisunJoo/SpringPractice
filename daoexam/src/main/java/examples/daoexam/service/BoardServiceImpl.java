@@ -25,9 +25,12 @@ public class BoardServiceImpl implements BoardService {
     @Override
     @Transactional
     public Board getBoard(Long id) {
-        // 1건 읽어오고
         // readCount 를 수정.
-        return null;
+        boardDao.updateCount(id);
+        // 1건 읽어오고
+        Board board = boardDao.getBoard(id);
+
+        return board;
     }
 }
 

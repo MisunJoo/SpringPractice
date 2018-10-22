@@ -71,12 +71,15 @@ Dao 만드는 방법
     }
 
 
+SimpleJdbcInsert 는 insert SQL문장을 내부적으로 자동으로 만든다.
+insert into board values( ?, ?, ..... );
 
+?에 채울 값은 SqlParameterSource, Map형태로 만든다.
 
-
-
-
-
+    public Long addBoard(Board board){
+       SqlParameterSource params = new BeanPropertySqlParameterSource(board);
+       return insertAction.executeAndReturnKey(params).longValue();
+    }
 
 
 
